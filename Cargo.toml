@@ -1,0 +1,8 @@
+[package]
+name = "camunda-cli"
+version = "0.1.0"
+authors = ["Maximb <sprayrules@gmail.com>"]
+
+[dependencies]
+
+camunda-client = { git = "https://github.com/solarinc/camunda-client" }
