@@ -1,5 +1,3 @@
-extern crate camunda_client;
-
 use std::env;
 use camunda_client::api;
 
