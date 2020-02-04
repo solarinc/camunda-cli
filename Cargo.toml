@@ -6,4 +6,5 @@ edition = "2018"
 
 [dependencies]
 
-camunda-client = { git = "https://github.com/solarinc/camunda-client" }
+tokio = { version = "0.2" }
+camunda-client = { git = "https://github.com/sotabpa/camunda-client" }

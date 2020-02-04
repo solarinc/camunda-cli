@@ -1,12 +1,19 @@
 use std::env;
-use camunda_client::api;
+use tokio::runtime::Runtime;
+use camunda_client::api::deployment;
 
 fn main() {
     match env::args().nth(1) {
-        Some(d) => {
-            let url = "http://127.0.0.1:8080/engine-rest/deployment/create";
-            api::deployment::create(url, &d);
+        Some(host) => {
+            match env::args().nth(2) {
+                Some(file_name) => {
+                    let url = host + "/engine-rest/deployment/create";
+        
+                    deployment::create(&url, &file_name);
+                }
+                None => println!("file name not passed")
+            }            
         }
-        None => println!("Nothing passed!")
+        None => println!("nothing passed")
     }
 }
